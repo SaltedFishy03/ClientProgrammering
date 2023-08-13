@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <button onclick="ClearText()">AC</button>
+    <p>Enter the first number: <input type="number" id="first" /></p>
+    <p>Enter the second number: <input type="number" id="second" /></p>
+    <button onclick="performOperation(add)">Add</button>
+    <button onclick="performOperation(subtract)">Minus</button>
+    <button onclick="performOperation(division)">Divide</button>
+    <button onclick="performOperation(multiply)">Multiply</button>
+    <p>Result: <span id="result"></span></p>
+
+  
+<!-- Har lavet denne metode så jeg ikke går imod DRY principle.
+     Da jeg fandt mig selv skrive getElementById i hver enkel metode -->
+    <script>
+        function performOperation(operation) {
+            let firstNumber, secondNumber, result;
+            firstNumber = parseFloat(document.getElementById("first").value);
+            secondNumber = parseFloat(document.getElementById("second").value);
+            
+            result = operation(firstNumber, secondNumber);
+            document.getElementById("result").textContent = result;
+            
+        }
+
+    //#region Matematiske operationer
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function division(a, b){
+            return a / b;
+        }
+
+        function multiply(a, b){
+            return a * b
+        }
+    //#endregion
+
+
+    // samler alle ved navn input ind. 
+    // Går igennem dem alle og sætter deres "værdi" til at være tom.
+    // var dog nød til at manuelt at hente og sætte resultet feltet til at være tomt.
+        function ClearText(){
+            let allInputs = document.querySelectorAll('input');
+            let resultSpan = document.getElementById('result');
+            allInputs.forEach(singleInput => singleInput.value = '');    
+            resultSpan.textContent = '';       
+        }
+    </script>
+    <p>
+</body>
+</html>
