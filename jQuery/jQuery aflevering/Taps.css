@@ -1,0 +1,27 @@
+         
+        .tab {
+            overflow: hidden;
+        }
+
+        .tablink {
+            background-color: #f1f1f1;
+            float: left;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .tablink:hover {
+            background-color: #ddd;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        /* Display the first tab by default */
+        #tab1 {
+            display: block;
+        }
