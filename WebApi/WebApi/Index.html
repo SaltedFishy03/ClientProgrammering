@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Communication against City Web Api</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* * {
+            background-color: yellow;
+        } */
+        th, td {
+            text-align: center;
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cities Web Api</h1>
+    <h3>Add</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addItem()">
+        <input type="text" id="add-name" placeholder="City name">
+        <input type="text" id="add-desc" placeholder="Description">
+        <input type="text" id="add-conId" placeholder="Country ID">
+
+        <input type="submit" value="Add">
+    </form>
+
+    <div id="editForm">
+        <h3>Edit</h3>
+        <form action="javascript:void(0);" onsubmit="updateItem()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-desc">
+            <input type="text" id="edit-conId">
+            <input type="submit" value="Save">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table style="border-collapse: collapse">
+        <tr>
+            <th>Country name</th>
+            <th>City name</th>
+            <th>Discription</th>
+           
+        </tr>
+        <tbody id="Display"></tbody>
+    </table>
+</body>
+
+</html>
+
+<script src="CityWebApi.js" asp-append-version="true"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getData();
+        closeInput();
+    });
+</script>
