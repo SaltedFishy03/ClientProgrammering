@@ -5,16 +5,7 @@
     <meta charset="utf-8" />
     <title>Communication against City Web Api</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        /* * {
-            background-color: yellow;
-        } */
-        th, td {
-            text-align: center;
-            border: 1px solid black;
-            padding: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -27,6 +18,7 @@
 
         <input type="submit" value="Add">
     </form>
+
 
     <div id="editForm">
         <h3>Edit</h3>
@@ -42,15 +34,21 @@
 
     <p id="counter"></p>
 
-    <table style="border-collapse: collapse">
-        <tr>
-            <th>Country name</th>
-            <th>City name</th>
-            <th>Discription</th>
-           
-        </tr>
-        <tbody id="Display"></tbody>
-    </table>
+<div id="table-wrapper">
+    <div id="table-scroll">
+        <table style="border-collapse: collapse">
+            <tr>
+                <th>Country name</th>
+                <th>City name</th>
+                <th>Discription</th>         
+                <th>Languages</th>         
+            </tr>
+            <tbody id="Display"></tbody>
+        </table>
+
+    </div>
+</div>
+ 
 </body>
 
 </html>
